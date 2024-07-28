@@ -58,6 +58,12 @@ test('validate-npm-package-name', function (t) {
     validForOldPackages: false,
     errors: ['name cannot start with an underscore'] })
 
+  t.same(validate('-start-with-hyphen'), {
+    validForNewPackages: false,
+    validForOldPackages: false,
+    errors: ['name cannot start with a hyphen'],
+  })
+
   t.same(validate('contain:colons'), {
     validForNewPackages: false,
     validForOldPackages: false,
